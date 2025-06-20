@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Quizzo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+  
+  <!-- Custom Styles -->
+  <style>
+    /* Video Background */
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    /* Dark overlay to increase contrast */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    /* Ensure main content stays above overlay */
+    body > *:not(video):not(.overlay) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar {
+      z-index: 3;
+    }
+
+    .land {
+      text-align: center;
+      margin-top: 80px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .land h3 {
+      font-family: "Comic Sans MS", cursive;
+      font-size: 3rem;
+    }
+
+    .but {
+      background-color: #ffc107;
+      border: none;
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .but a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .sub h3 {
+      color: #fff;
+      background: rgba(0,0,0,0.6);
+      text-align: center;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    #cat.card {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 280px;
+      margin: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    #cat.card:hover {
+      transform: scale(1.05);
+    }
+
+    #cat .card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #343a40;
+      text-align: center;
+    }
+
+    #cat .btn-primary {
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    footer {
+      background: #f8f9fa;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop id="myVideo" src="./media/bg.mp4"></video>
+  <div class="overlay"></div>
+
+  <nav class="navbar navbar-dark bg-warning justify-content-between">
+    <a class="navbar-brand"><h3>Quizzo</h3></a>
+    <a id="high" href="highScores.html">High Scores</a>
+  </nav>
+
+  <div class="land">
+    <h3><b>Welcome to Quizzo !!</b></h3>
+    <p>Test your Knowledge <br />Compete for High Score</p>
+    <br />
+    <button class="but"><a href="#sec1">Start Quiz</a></button>
+  </div>
+
+  <div class="sub" id="sec1">
+    <h3>Quiz Categories</h3>
+  </div>
+
+  <div class="container">
+    <!-- Category Cards -->
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/gk.jpg" alt="General Knowledge" />
+      <div class="card-body">
+        <h5 class="card-title">General Knowledge Quiz</h5>
+        <a href="gk.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/sports.jpg" alt="Sports Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Sports Quiz</h5>
+        <a href="sports.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/geo.jpg" alt="Geography Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Geography Quiz</h5>
+        <a href="geo.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/history.png" alt="History Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">History Quiz</h5>
+        <a href="history.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/animal.jpg" alt="Animals Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Animals Quiz</h5>
+        <a href="animals.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/v.jpg" alt="Vehicles Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Vehicles Quiz</h5>
+        <a href="vehicles.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/comp.jpeg" alt="Computer Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Computer Quiz</h5>
+        <a href="comp.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/gad.jpeg" alt="Gadgets Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Gadgets Quiz</h5>
+        <a href="gad.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+    <div id="cat" class="card">
+      <img class="card-img-top" src="./media/maths.jpeg" alt="maths Quiz" />
+      <div class="card-body">
+        <h5 class="card-title">Mathematics Quiz</h5>
+        <a href="maths.html" class="btn btn-primary">Start</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted">
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">ALOK KUMAR</h6>
+            <p>Quick Learner, Hardworking, Creative and Energetic who is ready to apply his skills and wants to learn and acquire knowledge under the mentorship of a team of professionals to solve real world problems.</p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Technologies</h6>
+            <p><a href="https://www.w3schools.com/html/" class="text-reset">HTML</a></p>
+            <p><a href="https://www.w3schools.com/css/" class="text-reset">CSS</a></p>
+            <p><a href="https://www.w3schools.com/js/" class="text-reset">JAVASCRIPT</a></p>
+            <p><a href="https://getbootstrap.com/" class="text-reset">BOOTSTRAP</a></p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Useful Links</h6>
+            <p><a href="https://www.linkedin.com/in/alok20" class="text-reset">My LinkedIn</a></p>
+            <p><a href="https://github.com/Alok-20cs" class="text-reset">GitHub</a></p>
+            <p><a href="#!" class="text-reset">Report</a></p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>Kanke, Ranchi, Jharkhand, India</p>
+            <p>ranjan20.alok@gmail.com</p>
+            <p>+91 9431165284</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright:
+      <a class="text-reset fw-bold" href="https://www.linkedin.com/in/alok20">Alok</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
